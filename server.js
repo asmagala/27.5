@@ -1,13 +1,17 @@
 const express = require('express');
+const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
+app.use(cors());
 
 const db = require('./data/db.js');
 const testimonialsRoutes = require('./routes/testimonials.routes');
 const concertsRoutes = require('./routes/concerts.routes');
+const seatsRoutes = require('./routes/seats.routes');
 app.use('/api', testimonialsRoutes);
 app.use('/api', concertsRoutes);
+app.use('/api', seatsRoutes);
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -73,7 +77,7 @@ app.delete('/concerts/:id', (req, res) => {
   res.json({message: 'OK'});
 });
 */
-/**************************************************** SEATS */
+/**************************************************** SEATS 
 app.get('/seats/:id', (req, res) => {
   res.json(db.seats[db.seats.findIndex(i => i.id == req.params.id)]);
 });
@@ -101,7 +105,7 @@ app.delete('/seats/:id', (req, res) => {
   res.json({message: 'OK'});
 });
 
-
+*/
 
 
 app.use((req, res) => {
