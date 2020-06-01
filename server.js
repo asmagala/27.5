@@ -35,8 +35,13 @@ app.put('/testimonials/:id', (req, res) => {
 });
 
 app.delete('/testimonials/:id', (req, res) => {
-  db.splice(db.findIndex(i => i.id == req.params.id), 1);
-  res.json({message: 'OK'});
+  const idSent = db.findIndex(i => i.id == req.params.id);
+  console.log(idSent);
+  if (idSent >= 0)
+  {
+    db.splice(idSent, 1);
+  }
+  res.json({message: idSent});
 });
 
 app.use((req, res) => {
