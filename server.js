@@ -3,10 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 
-const db = [
-  { id: 1, author: 'John Doe', text: 'This company is worth every coin!' },
-  { id: 2, author: 'Amanda Doe', text: 'They really know how to make you happy.' },
-];
+const db = require('./data/db.js');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -36,12 +33,11 @@ app.put('/testimonials/:id', (req, res) => {
 
 app.delete('/testimonials/:id', (req, res) => {
   const idSent = db.findIndex(i => i.id == req.params.id);
-  console.log(idSent);
   if (idSent >= 0)
   {
     db.splice(idSent, 1);
   }
-  res.json({message: idSent});
+  res.json({message: 'OK'});
 });
 
 app.use((req, res) => {
