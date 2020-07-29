@@ -17,8 +17,13 @@ router.get('/seats', (req, res) => {
 });
   
 router.post('/seats', (req, res) => {
-  db.seats.push({id: uuidv4(), day: req.body.day, seat: req.body.seat, client: req.body.client, email: req.body.email});
-  res.json({message: 'OK'});
+  const isBooked = db.seats.some(seatChosen => seatChosen.day == req.body.day && seatChosen.seat == req.body.seat );
+  if (isBooked) {
+    res.status(404).json({ message: "The slot is already taken..."});
+  } else {
+    db.seats.push({id: uuidv4(), day: req.body.day, seat: req.body.seat, client: req.body.client, email: req.body.email});
+    res.json({message: 'OK'});
+  }
 });
   
 router.put('/seats/:id', (req, res) => {
