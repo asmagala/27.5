@@ -16,8 +16,7 @@ router.get('/seats/:id', (req, res) => {
     res.json(db.seats);
   });
   
-  router.route('/seats').post((req, res) => {
-    console.log(req);
+  router.post('/seats', (req, res) => {
     db.seats.push({id: uuidv4(), day: req.body.day, seat: req.body.seat, client: req.body.client, email: req.body.email});
     res.json({message: 'OK'});
   });
