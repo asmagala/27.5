@@ -3,11 +3,18 @@ import { Button, Progress, Alert } from 'reactstrap';
 
 import './SeatChooser.scss';
 
+const REFRESH_INTERVAL = 2 * 1000 * 60;
+
 class SeatChooser extends React.Component {
   
   componentDidMount() {
     const { loadSeats } = this.props;
     loadSeats();
+    this.refreshSeats = setInterval(() => loadSeats(), REFRESH_INTERVAL);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refreshSeats);
   }
 
   isTaken = (seatId) => {

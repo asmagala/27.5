@@ -16,8 +16,7 @@ router.get('/concerts/:id', (req, res) => {
     res.json(db.concerts);
   });
   
-  router.route('/concerts').post((req, res) => {
-    console.log(req);
+  router.post('/concerts', (req, res) => {
     db.concerts.push({id: uuidv4(), performer: req.body.performer, genre:  req.body.genre, price: req.body.price, day: req.body.day, image: req.body.image});
     res.json({message: 'OK'});
   });
