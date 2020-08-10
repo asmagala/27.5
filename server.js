@@ -34,7 +34,11 @@ app.use((req, res) => {
 });
 
 //// NewWaveDB connection ////
-mongoose.connect('mongodb+srv://master:dwotsotd@cluster0.bp3lt.mongodb.net/NewWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+// to connect to ATLAS db remotely
+//mongoose.connect('mongodb+srv://master:dwotsotd@cluster0.bp3lt.mongodb.net/NewWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+// local connection
+mongoose.connect('mongodb://localhost:27017/NewWaveDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
 const db = mongoose.connection;
 
 db.once('open', () => {
