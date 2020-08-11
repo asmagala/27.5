@@ -32,6 +32,7 @@ exports.getById = async (req, res) => {
 
 exports.getByPerformer = async (req, res) => {
   try {
+    console.log('aaaaa:', req.params.performer);
     res.json(await Concert.find({performer: req.params.performer}));
   } catch(err) {
     res.json(err);

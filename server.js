@@ -58,3 +58,4 @@ io.on('connection', (socket) => {
   console.log(`New socket: ${socket.id}`);
 });
 
+module.exports = server;
