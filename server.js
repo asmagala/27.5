@@ -37,7 +37,7 @@ app.use((req, res) => {
 // to connect to ATLAS db remotely
 //mongoose.connect('mongodb+srv://master:dwotsotd@cluster0.bp3lt.mongodb.net/NewWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 // local connection
-const DB_CONNECT = (process.env.NODE_ENV === 'production') ? 'mongodb+srv://master:dwotsotd@cluster0.bp3lt.mongodb.net/NewWaveDB?retryWrites=true&w=majority' : 'mongodb://localhost:27017/NewWaveDB';
+const DB_CONNECT = (process.env.NODE_ENV === 'production') ? process.env.DBConnection : 'mongodb://localhost:27017/NewWaveDB';
 
 mongoose.connect(DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
 
