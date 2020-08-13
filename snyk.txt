@@ -1,0 +1,35 @@
+
+Testing C:\Users\master\Desktop\Kodilla\27.5...
+
+Tested 232 dependencies for known issues, found 4 issues, 4 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade mocha@6.2.1 to mocha@6.2.3 to fix
+  ✗ Prototype Pollution [Medium Severity][https://snyk.io/vuln/SNYK-JS-MINIMIST-559764] in minimist@0.0.8
+    introduced by mocha@6.2.1 > mkdirp@0.5.1 > minimist@0.0.8
+  ✗ Prototype Pollution [Medium Severity][https://snyk.io/vuln/SNYK-JS-YARGSPARSER-560381] in yargs-parser@13.1.1
+    introduced by mocha@6.2.1 > yargs-parser@13.1.1
+
+  Upgrade mongoose@5.7.1 to mongoose@5.7.5 to fix
+  ✗ Information Exposure [Medium Severity][https://snyk.io/vuln/SNYK-JS-MONGOOSE-472486] in mongoose@5.7.1
+
+
+Issues with no direct upgrade or patch:
+  ✗ Prototype Pollution [Medium Severity][https://snyk.io/vuln/SNYK-JS-FLAT-596927] in flat@4.1.0
+    introduced by mocha@6.2.1 > yargs-unparser@1.6.0 > flat@4.1.0
+  This issue was fixed in versions: 5.0.2, 4.1.2, 3.0.1, 2.0.2, 5.0.2, 1.6.2
+
+
+
+Organization:      asmagala
+Package manager:   yarn
+Target file:       yarn.lock
+Project name:      27.5
+Open source:       no
+Project path:      C:\Users\master\Desktop\Kodilla\27.5
+Licenses:          enabled
+
+Run `snyk wizard` to address these issues.
+

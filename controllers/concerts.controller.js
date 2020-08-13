@@ -66,7 +66,6 @@ exports.getByDay = async (req, res) => {
     res.json(err);
   }
 };
-//////////////////////////////////
 
 exports.post = async (req, res) => {
   try {

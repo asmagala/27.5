@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 10000 --watch \"./test/api/concerts/get.test.js\"",
+    "test": "snyk test && mocha --timeout 10000 --watch \"./test/api/concerts/get.test.js\"",
     "start": "nodemon server.js",
     "build": "cd client && yarn install && yarn build"
   },
@@ -23,9 +23,10 @@
     "chai": "4.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mocha": "6.2.1",
+    "helmet": "3.21.1",
+    "mocha": "6.2.3",
     "mongo-sanitize": "1.0.1",
-    "mongoose": "5.7.1",
+    "mongoose": "5.7.5",
     "onchange": "6.1.0",
     "path": "^0.12.7",
     "socket.io": "^2.3.0",
@@ -33,5 +34,8 @@
   },
   "engines": {
     "node": "10.x"
+  },
+  "devDependencies": {
+    "snyk": "^1.373.1"
   }
 }
