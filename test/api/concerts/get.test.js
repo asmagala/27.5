@@ -104,12 +104,11 @@ describe('GET /api/concerts', () => {
     expect(res.body.length).to.be.equal(4);
   });
 
-  it('should return concerts that are on the day', async () => {
+  it('should return concerts that are on the day 1', async () => {
     const res = await request(server).get('/api/concerts/day/1');
     expect(res.status).to.be.equal(200);
     expect(res.body).to.be.an('array');
     expect(res.body.length).to.be.equal(1);
   });
-
 
 });
